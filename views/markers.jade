@@ -42,8 +42,14 @@ block footer
         }
 
         function createMarker(place) {
+            var icons = {
+                parking: {
+                    icon: '/images/icon.png'
+                }
+            }
             var placeLoc = place.geometry.location;
             var marker = new google.maps.Marker({
+                icon: icons['parking'].icon,
                 map: map,
                 position: place.geometry.location
             });
