@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -8,5 +9,6 @@ a {
 }
 
 body.background {
-  background: url('/images/bmw-backgrond.jpg') no-repeat;
+  background: url('../images/bmw-background.jpg') no-repeat;
+  background-size: cover;
 }
