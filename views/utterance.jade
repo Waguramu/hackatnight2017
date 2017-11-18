@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    .wrapper.font-white
+        h1=utterance
+
+block footer
+    script(src='../public/javascripts/lib/MediaStreamRecorder')
+    script.
+        var mediaConstraints = {
+            audio: true
+        };
+
+        navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+
+        function onMediaSuccess(stream) {
+            var mediaRecorder = new MediaStreamRecorder(stream);
+            mediaRecorder.mimeType = 'audio/wav'; // check this line for audio/wav
+            mediaRecorder.ondataavailable = function (blob) {
+                // POST/PUT "Blob" using FormData/XHR2
+                uploadToServer(blob);
+                mediaRecorder.stop();
+            };
+            mediaRecorder.start(10000);
+        }
+
+        function uploadToServer(blob, apiURL) {
+            // create FormData
+            var formData = new FormData();
+            formData.append('accept', 'audio/wav');
+            formData.append('botAlias', '');
+            formData.append('botName', '');
+            formData.append('userId', '');
+            formData.append('contentType', '');
+            formData.append('inputStream', blob);
+            formData.append('sessionAttributes', {});
+
+            makeXMLHttpRequest(apiURL, formData, function () {
+
+            });
+        }
+
+        function makeXMLHttpRequest(url, data, callback) {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    callback();
+                }
+            };
+            request.open('POST', url);
+            request.send(data);
+        }
+
+        function onMediaError(e) {
+            console.error('media error', e);
+        }
