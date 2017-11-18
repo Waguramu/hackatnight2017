@@ -43,3 +43,14 @@ body.background {
 #map {
   height: 100%;
 }
+
+#container {
+  margin: 0px auto;
+  width: 100%;
+  height: 70vh;
+  vertical-align: middle;
+}
+
+#videoElement {
+  background-color: #666;
+}
