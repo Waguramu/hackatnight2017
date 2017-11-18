@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .wrapper
+
+block append footer
+  script(src="custom/faceRecognition.js")
+  script.
+    var apigClient = apigClientFactory.newClient(!{JSON.stringify(apiKey)});
+    getVehicles(apigClient);

@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body.background
+    block content
+    block footer
+      footer
+        script(src="lib/axios/dist/axios.standalone.js")
+        script(src="lib/CryptoJS/rollups/hmac-sha256.js")
+        script(src="lib/CryptoJS/rollups/sha256.js")
+        script(src="lib/CryptoJS/components/hmac.js")
+        script(src="lib/CryptoJS/components/enc-base64.js")
+        script(src="lib/url-template/url-template.js")
+        script(src="lib/apiGatewayCore/sigV4Client.js")
+        script(src="lib/apiGatewayCore/apiGatewayClient.js")
+        script(src="lib/apiGatewayCore/simpleHttpClient.js")
+        script(src="lib/apiGatewayCore/utils.js")
+        script(src="lib/apigClient.js")
