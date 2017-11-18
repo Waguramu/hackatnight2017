@@ -9,6 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var map = require('./routes/map');
+var directions = require('./routes/directions');
+var markers = require('./routes/markers')
 var utterance = require('./routes/utterance');
 
 var app = express();
@@ -29,6 +31,8 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/profile', profile);
 app.use('/map', map);
+app.use('/directions', directions);
+app.use('/markers', markers);
 app.use('/utterance', utterance);
 
 // public
