@@ -8,5 +8,10 @@ a {
 }
 
 body.background {
-  background: url('/images/bmw-backgrond.jpg') no-repeat;
+  background: url('../images/blurred-bmw.jpg') no-repeat;
+  background-size: cover;
+}
+
+.font-white {
+  color: white;
 }

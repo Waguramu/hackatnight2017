@@ -5,7 +5,7 @@ var apiKey = require('../config.json');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'Express' ,
+    title: "Hello there, please look at the camera",
     apiKey
   });
 });
