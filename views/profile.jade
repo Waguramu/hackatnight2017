@@ -1,17 +1,84 @@
 extends layout
 
-block content
-    .wrapper#infoSection
-        .row
-            .col-md-4.col-sm-6.col-xs-12
-                img(src="../images/user.jpg")
-            .col-md-8.col-sm-6.col-xs-12
-                .row
-                    h1=userName
-                .row
-                    p
-                        | Welcome back to your car, !{firstName}!
-                .row
-                    p
-                        | I am not #{firstName}
+block append head
+    link(rel="stylesheet" href="/css/normalize.css")
+    link(rel="stylesheet" href="/css/demo.css")
+    link(rel="stylesheet" href="/css/component1.css")
 
+block content
+  .container
+    .section
+        #infoPanel.margin-top-100px.text-center
+            .row
+                .col-md-3
+                .col-md-3.mileage
+                    .circle.background-white.font-red
+                        .withUnit.padding-top-10px
+                            span.number= 'Sun'
+                        .label.padding-top-neg10px= '20/11/2017'
+                .col-md-3.something
+                    .circle.background-red
+                        .withUnit.padding-top-21px
+                            span.number.time-display= '2:32'
+                            span= 'pm'
+                        .label= 'Time'
+                .col-md-3
+    .section
+        #userProfile.text-center.margin-top-60px
+            h1= "Hi John, how are you doing today"
+
+    .section
+        #infoPanel.margin-top-60px.text-center
+            .row
+                .col-md-3
+                .col-md-3.mileage
+                    .circle.background-red
+                        .withUnit.padding-top-10px
+                            span.number= 33
+                            span= 'L'
+                        .label.padding-top-neg10px= 'Remaining Fuel'
+                .col-md-3.something
+                    .circle.background-white.font-red
+                        .withUnit.padding-top-10px
+                            span.number= 3
+                            span= '°C'
+                        .label.padding-top-neg10px= 'Outside Temp'
+                .col-md-3
+
+    .component
+        button.cn-button#cn-button= "+"
+        .cn-wrapper#cn-wrapper
+            ul
+                li
+                    a
+                        span.icon-picture
+                li
+                    a
+                        span.icon-headphones
+
+                li
+                    a
+                        span.icon-home
+
+                li
+                    a
+                        span.icon-facetime-video
+                li
+                    a
+                        span.icon-envelope-alt
+        #cn-overlay.cn-overlay
+
+block append footer
+    script(src="plugins/polyfills.js")
+    script(src="plugins/demo1.js")
+    script(src="plugins/demoad.js")
+    
+    script.
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-7243260-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();

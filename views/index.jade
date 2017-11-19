@@ -2,11 +2,14 @@ extends layout
 
 block content
   .wrapper.font-white
-    .row(style="text-align:center; margin-top: 12vh;")
-      h1#firstTitle(style="width:100%")=title
-      h1#recognized(hidden)
-    .row(style="text-align:center")
-      div#container
+    .bottom-text-wrapper
+      .bottom-text-container
+        h1#firstTitle=title
+    .top-text-wrapper
+      .top-text-container
+        h1#recognized
+    .video-wrapper
+      .video-container
         video(autoplay="true")#videoElement
 
 block append footer
@@ -30,8 +33,12 @@ block append footer
       }
 
       function uponRecognition() {
-        $('#firstTitle').text('Facial recognition successful')
-        window.location='/profile'
+        $('#firstTitle').hide()
+        $('#recognized').text('Access Granted')
+
+        setTimeout(function() {
+          window.location='/profile'
+        }, 500);
       }
 
       setTimeout(uponRecognition, 4000);
