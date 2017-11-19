@@ -121,12 +121,31 @@ body.background {
   vertical-align: middle;
 }
 
+.small-circle {
+  margin-top: 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+}
+
 .background-red {
   background-color: #C65050;
 }
 
 .time-display {
   font-size: 3em;
+}
+
+.transaction-info {
+  font-size: 1.2em;
+}
+
+.icon-map2:before {
+  content: "\e94c";
+}
+
+.icon-list2:before {
+  content: "\e9bb";
 }
 
 .font-red {
@@ -140,6 +159,10 @@ body.background {
 .padding-top-10px {
   padding-top: 10px;
 }
+
+.padding-top-8px {
+  padding-top: 8px;
+}
 .padding-top-neg10px {
   top: -10px;
 }
@@ -150,6 +173,10 @@ body.background {
 
 .padding-top-30px {
   padding-top: 30px;
+}
+
+.margin-top-50px {
+  margin-top: 50px;
 }
 
 .margin-top-60px {

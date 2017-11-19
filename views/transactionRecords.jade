@@ -1,0 +1,32 @@
+extends layout
+
+block append head
+    link(rel="stylesheet" href="/css/normalize.css")
+    link(rel="stylesheet" href="/css/demo.css")
+    link(rel="stylesheet" href="/css/component1.css")
+
+block content
+  .container
+    .section
+        #userProfile.text-center.margin-top-60px
+            h1= "Here are the purchases you've made recently"
+            h4= "BMW Points: 1130"
+
+    .section#transactionRecords.margin-top-100px
+        -each transaction,i in transactionRecords
+            .row
+                .col-md-2
+                .col-md-2
+                    if i%2==0
+                        .small-circle.background-red.padding-top-10px.text-center
+                            p.padding-top-8px= transaction.date
+                            p.padding-top-neg10px= transaction.year
+                    else
+                        .small-circle.background-white.font-red.padding-top-10px.text-center
+                            p.padding-top-8px= transaction.date
+                            p.padding-top-neg10px= transaction.year
+                .col-md-7
+                    .transaction-info.margin-top-50px
+                        p= transaction.info
+
+    include ./navigationMenu.jade

@@ -12,6 +12,7 @@ var map = require('./routes/map');
 var directions = require('./routes/directions');
 var markers = require('./routes/markers')
 var utterance = require('./routes/utterance');
+var transactionRecords = require('./routes/transactionRecords');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// views
 app.use('/', index);
 app.use('/users', users);
 app.use('/profile', profile);
@@ -34,6 +36,7 @@ app.use('/map', map);
 app.use('/directions', directions);
 app.use('/markers', markers);
 app.use('/utterance', utterance);
+app.use('/profile/transactionRecords', transactionRecords);
 
 // public
 app.use('/public',express.static(path.join(__dirname, '/public')));
