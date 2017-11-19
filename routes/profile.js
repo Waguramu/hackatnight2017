@@ -4,8 +4,8 @@ var router = express.Router();
 /* GET profile page. */
 router.get('/', function(req, res, next) {
     res.render('profile', {
-        userName: "John Doe",
-        firstName: "John"
+        userName: "Vagram A",
+        firstName: "Vagram"
     });
 });
 
