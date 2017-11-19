@@ -186,3 +186,36 @@ body.background {
 .margin-top-100px {
   margin-top: 100px;
 }
+
+.mapButton {
+  position: absolute;
+  width: 50px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+#back {
+  top: 50px;
+  left: 0px;
+  bottom: 50px;
+}
+
+#back:hover {
+  background-image: url('../images/back.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-attachment: fixed;
+}
+
+#forward {
+  top: 50px;
+  right: 0px;
+  bottom: 50px;
+}
+
+#forward:hover {
+  background-image: url('../images/forward.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-attachment: fixed;
+}
