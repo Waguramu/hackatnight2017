@@ -2,8 +2,18 @@ extends layout
 
 block content
     div(id="map")
+    button.mapButton#back(type="button", onclick="goBack()")
+    button.mapButton#forward(type="button", onclick="goForward()")
 
 block footer
+    script.
+        function goBack() {
+            window.location='/profile'
+        }
+        function goForward() {
+            window.location='/directions'
+        }
+
     script.
         var map, infoWindow;
         function initMap() {

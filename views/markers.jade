@@ -1,17 +1,19 @@
 extends layout
 
 block content
-    div#floating-panel(hidden=true)
-        b Start:
-            select#start
-                option(value="munich") Munich
-        b End:
-            select#end
-                option(value="Hamburg") Hamburg
     div(id="map")
-    div#warnings-panel(hidden=true)
+    button.mapButton#back(type="button", onclick="goBack()")
+    button.mapButton#forward(type="button", onclick="goForward()")
 
 block footer
+    script.
+        function goBack() {
+            window.location = '/directions'
+        }
+        function goForward() {
+            window.location = '/profile'
+        }
+
     script.
         var map;
         var infowindow;
